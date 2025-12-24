@@ -1,24 +1,24 @@
+
 {
-  "name": "the-winter-architect---komilov-abdumalik",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "preview": "vite preview"
-  },
+  "name": "the-winter-architect-portfolio",
+  "version": "1.0.0",
+  "description": "Cinematic Portfolio for Komilov Abdumalik - Digital Marketer & Media Buyer",
+  "main": "index.tsx",
+  "author": "Komilov Abdumalik",
+  "license": "MIT",
   "dependencies": {
     "react": "^19.2.3",
     "react-dom": "^19.2.3",
-    "three": "^0.182.0",
     "framer-motion": "^12.23.26",
+    "three": "^0.182.0",
     "lucide-react": "^0.562.0"
   },
-  "devDependencies": {
-    "@types/node": "^22.14.0",
-    "@vitejs/plugin-react": "^5.0.0",
-    "typescript": "~5.8.2",
-    "vite": "^6.2.0"
-  }
+  "keywords": [
+    "portfolio",
+    "media-buying",
+    "digital-marketing",
+    "threejs",
+    "react",
+    "batman-aesthetic"
+  ]
 }

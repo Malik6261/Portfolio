@@ -1,20 +1,36 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
-</div>
+# ❄️ THE WINTER ARCHITECT | KOMILOV ABDUMALIK
 
-# Run and deploy your AI Studio app
+![Growth Architect](https://img.shields.io/badge/Role-Digital%20Marketer-cyan)
+![Media Buyer](https://img.shields.io/badge/Specialty-Media%20Buying-blue)
+![Theme](https://img.shields.io/badge/Aesthetic-Wayne%20Tech%20%2F%20Noir-black)
 
-This contains everything you need to run your app locally.
+> "Media buying is a science. Ad creative is the soul. Conversion is the only metric."
 
-View your app in AI Studio: https://ai.studio/apps/drive/1-fmzmvZZo6_YFF3onp1Hmm6AMYqMbbPv
+A high-performance, cinematic personal portfolio built for **Komilov Abdumalik**. Designed with a "Wayne Tech meets Gotham City Noir" aesthetic, this project showcases 2 years of ruthless growth experiments, AI-driven funnel strategies, and professional media buying operations.
 
-## Run Locally
+## 🛠 THE ARSENAL (Tech Stack)
 
-**Prerequisites:**  Node.js
+- **Frontend Core**: React 19 (via ESM modules)
+- **3D Engine**: Three.js (Icy Wireframe Grid & Particle Snow System)
+- **Motion & UX**: Framer Motion (System Boot Sequence & 3D Hover Effects)
+- **Styling**: Tailwind CSS
+- **Icons**: Lucide React
+- **Architecture**: No-build / Import Map setup for sub-zero latency.
 
+## 📂 CLASSIFIED FILES (Projects)
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+- **SmartAbituriyent**: AI-driven education guidance platform for the Uzbek market.
+- **UGC Forge AI**: Automated high-conversion ad creative engine.
+- **True Nation Inc**: Scaled logistics via precision Meta Ads.
+- **AI Automation Stack**: Marketing efficiency via n8n & Meta APIs.
+- **Shopify Growth Labs**: CRO and LTV optimization labs.
+
+## 🚀 DEPLOYMENT
+
+This project is optimized for **Vercel** or **Firebase Hosting**. 
+1. Push this code to a GitHub Repository.
+2. Connect to Vercel.
+3. The system initializes automatically.
+
+---
+© 2024 KOMILOV ABDUMALIK. UNLOCKING SUB-ZERO GROWTH.
