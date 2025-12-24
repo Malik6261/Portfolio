@@ -6,7 +6,7 @@ import Cursor from './components/Cursor';
 import BiosBoot from './components/BiosBoot';
 import ProjectCard from './components/ProjectCard';
 import { PROJECTS, SKILLS } from './constants';
-import { Shield, Zap, Target, Cpu, Terminal, Snowflake, MessageCircle, Linkedin, Mail, Sparkles, TrendingUp } from 'lucide-react';
+import { Shield, Target, Terminal, Snowflake, MessageCircle, Linkedin, Mail, Sparkles, TrendingUp } from 'lucide-react';
 
 const App: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -37,18 +37,13 @@ const App: React.FC = () => {
               </span>
               <span className="font-mono text-[8px] text-cyan-400/50 uppercase">Subzero_Media_Initialized</span>
             </div>
-            <nav className="hidden md:flex gap-8 text-[10px] uppercase tracking-widest font-bold">
-              <a href="#mission" className="hover:text-cyan-400 transition-colors">Strategy</a>
-              <a href="#arsenal" className="hover:text-cyan-400 transition-colors">Arsenal</a>
-              <a href="#projects" className="hover:text-cyan-400 transition-colors">Campaigns</a>
-              <a href="#contact" className="hover:text-cyan-400 transition-colors">Uplink</a>
-            </nav>
-            <div className="flex gap-4">
-              <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">
-                <Linkedin size={18} className="hover:text-cyan-400 cursor-pointer transition-colors" />
+            
+            <div className="flex gap-4 items-center">
+              <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 border border-white/10 hover:border-cyan-400/50 transition-all rounded-sm group">
+                <Linkedin size={16} className="text-slate-400 group-hover:text-cyan-400 transition-colors" />
               </a>
-              <a href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer">
-                <MessageCircle size={18} className="hover:text-cyan-400 cursor-pointer transition-colors" />
+              <a href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 border border-white/10 hover:border-cyan-400/50 transition-all rounded-sm group">
+                <MessageCircle size={16} className="text-slate-400 group-hover:text-cyan-400 transition-colors" />
               </a>
             </div>
           </header>
@@ -74,10 +69,7 @@ const App: React.FC = () => {
                   "2 years of ruthless growth experiments. I engineer funnel strategies that don't just reach people—they convert them through AI-driven cinematic vibes."
                 </p>
                 <div className="flex gap-4">
-                  <a href="#projects" className="px-8 py-3 bg-cyan-500 text-black font-bold uppercase text-xs tracking-widest hover:bg-white transition-all flex items-center gap-2 group">
-                    <Target size={16} className="group-hover:rotate-180 transition-transform duration-500" /> Open Dossier
-                  </a>
-                  <a href={`mailto:${EMAIL_ADDRESS}`} className="px-8 py-3 border border-cyan-500/30 text-cyan-400 font-bold uppercase text-xs tracking-widest hover:bg-cyan-500/10 transition-all backdrop-blur-sm flex items-center gap-2">
+                  <a href={`mailto:${EMAIL_ADDRESS}`} className="px-10 py-4 border border-cyan-500/30 text-cyan-400 font-bold uppercase text-xs tracking-widest hover:bg-cyan-500/10 transition-all backdrop-blur-sm flex items-center gap-2">
                     <Mail size={16} /> Contact Uplink
                   </a>
                 </div>
