@@ -1,6 +1,5 @@
-
 import React, { useEffect, useState } from 'react';
-import { motion, useMotionValue, useSpring } from 'framer-motion';
+import { motion, useMotionValue, useSpring, AnimatePresence } from 'framer-motion';
 
 const Cursor: React.FC = () => {
   const mouseX = useMotionValue(0);
@@ -77,6 +76,7 @@ const Cursor: React.FC = () => {
       <AnimatePresence>
         {isHovering && (
           <motion.div
+            key="ping"
             initial={{ scale: 0.5, opacity: 0 }}
             animate={{ scale: 2, opacity: 0 }}
             exit={{ opacity: 0 }}
@@ -89,5 +89,4 @@ const Cursor: React.FC = () => {
   );
 };
 
-import { AnimatePresence } from 'framer-motion';
 export default Cursor;
