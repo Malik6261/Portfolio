@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>THE WINTER ARCHITECT | Komilov Abdumalik</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;700&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
@@ -19,7 +19,7 @@
             color: #e5e5e5;
             overflow-x: hidden;
             font-family: 'Roboto Mono', monospace;
-            cursor: none;
+            -webkit-font-smoothing: antialiased;
         }
         h1, h2, h3 {
             font-family: 'Oswald', sans-serif;
@@ -61,23 +61,11 @@
             inset: 0;
             pointer-events: none;
             z-index: 998;
-            background: radial-gradient(circle, transparent 60%, rgba(10, 15, 20, 0.6) 100%),
-                        linear-gradient(rgba(255,255,255,0.01) 1px, transparent 1px),
-                        linear-gradient(90deg, rgba(255,255,255,0.01) 1px, transparent 1px);
-            background-size: 100% 100%, 40px 40px, 40px 40px;
+            background: radial-gradient(circle, transparent 60%, rgba(10, 15, 20, 0.6) 100%);
         }
-        ::-webkit-scrollbar {
-            width: 4px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #0a0f14;
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #00f3ff22;
-        }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #00f3ff44;
-        }
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #0a0f14; }
+        ::-webkit-scrollbar-thumb { background: #00f3ff22; }
     </style>
 <script type="importmap">
 {
