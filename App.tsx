@@ -1,12 +1,11 @@
-import React, { useState, Suspense } from 'react';
+import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Background3D from './components/Background3D';
-import Cursor from './components/Cursor';
 import BiosBoot from './components/BiosBoot';
 import ProjectCard from './components/ProjectCard';
 import SnowOverlay from './components/SnowOverlay';
 import { PROJECTS, SKILLS } from './constants';
-import { Shield, Target, Terminal, Snowflake, MessageCircle, Linkedin, Mail, Sparkles, TrendingUp, ChevronDown } from 'lucide-react';
+import { Shield, Terminal, Snowflake, MessageCircle, Linkedin, Mail, Sparkles, TrendingUp, ChevronDown } from 'lucide-react';
 
 const App: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -25,7 +24,6 @@ const App: React.FC = () => {
         <>
           <Background3D />
           <SnowOverlay />
-          <Cursor />
         </>
       )}
 
