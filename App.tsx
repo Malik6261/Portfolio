@@ -1,0 +1,220 @@
+
+import React, { useState } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import Background3D from './components/Background3D';
+import Cursor from './components/Cursor';
+import BiosBoot from './components/BiosBoot';
+import ProjectCard from './components/ProjectCard';
+import { PROJECTS, SKILLS } from './constants';
+import { Shield, Zap, Target, Cpu, Terminal, Snowflake, MessageCircle, Linkedin, Mail, Sparkles, TrendingUp } from 'lucide-react';
+
+const App: React.FC = () => {
+  const [isLoaded, setIsLoaded] = useState(false);
+  const LINKEDIN_URL = "https://www.linkedin.com/in/abdumalik-komilov-86107a320/";
+  const EMAIL_ADDRESS = "abdumalikkomilov2003@gmail.com";
+  const TELEGRAM_URL = "https://t.me/malik_ecom";
+
+  return (
+    <div className="relative min-h-screen selection:bg-cyan-500 selection:text-black">
+      <AnimatePresence>
+        {!isLoaded && <BiosBoot onComplete={() => setIsLoaded(true)} />}
+      </AnimatePresence>
+
+      <Background3D />
+      {isLoaded && <Cursor />}
+
+      {isLoaded && (
+        <motion.div 
+          initial={{ opacity: 0 }} 
+          animate={{ opacity: 1 }} 
+          className="relative z-10 text-slate-300"
+        >
+          {/* Header */}
+          <header className="fixed top-0 left-0 w-full p-6 md:p-10 flex justify-between items-center z-50 mix-blend-difference">
+            <div className="flex flex-col">
+              <span className="font-mono text-cyan-400 text-xs font-bold tracking-widest flex items-center gap-2">
+                <Snowflake size={14} className="animate-spin-slow" /> GROWTH_ARCHITECT
+              </span>
+              <span className="font-mono text-[8px] text-cyan-400/50 uppercase">Subzero_Media_Initialized</span>
+            </div>
+            <nav className="hidden md:flex gap-8 text-[10px] uppercase tracking-widest font-bold">
+              <a href="#mission" className="hover:text-cyan-400 transition-colors">Strategy</a>
+              <a href="#arsenal" className="hover:text-cyan-400 transition-colors">Arsenal</a>
+              <a href="#projects" className="hover:text-cyan-400 transition-colors">Campaigns</a>
+              <a href="#contact" className="hover:text-cyan-400 transition-colors">Uplink</a>
+            </nav>
+            <div className="flex gap-4">
+              <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer">
+                <Linkedin size={18} className="hover:text-cyan-400 cursor-pointer transition-colors" />
+              </a>
+              <a href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer">
+                <MessageCircle size={18} className="hover:text-cyan-400 cursor-pointer transition-colors" />
+              </a>
+            </div>
+          </header>
+
+          <main>
+            {/* Hero Section */}
+            <section className="h-screen flex flex-col justify-center px-6 md:px-24">
+              <motion.div
+                initial={{ x: -100, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transition={{ duration: 1, delay: 0.5 }}
+              >
+                <div className="text-cyan-400 font-mono text-sm mb-4 tracking-[0.5em] uppercase flex items-center gap-2">
+                  <TrendingUp size={16} /> Digital Marketer & Media Buyer
+                </div>
+                <h1 className="text-6xl md:text-9xl font-bold leading-none mb-6">
+                  KOMILOV <br /> 
+                  <span className="text-transparent border-b-4 border-cyan-400" style={{ WebkitTextStroke: '1px white' }}>
+                    ABDUMALIK
+                  </span>
+                </h1>
+                <p className="max-w-xl text-slate-400 font-mono text-xs md:text-sm leading-relaxed mb-10 border-l-2 border-cyan-500/20 pl-6 italic">
+                  "2 years of ruthless growth experiments. I engineer funnel strategies that don't just reach people—they convert them through AI-driven cinematic vibes."
+                </p>
+                <div className="flex gap-4">
+                  <a href="#projects" className="px-8 py-3 bg-cyan-500 text-black font-bold uppercase text-xs tracking-widest hover:bg-white transition-all flex items-center gap-2 group">
+                    <Target size={16} className="group-hover:rotate-180 transition-transform duration-500" /> Open Dossier
+                  </a>
+                  <a href={`mailto:${EMAIL_ADDRESS}`} className="px-8 py-3 border border-cyan-500/30 text-cyan-400 font-bold uppercase text-xs tracking-widest hover:bg-cyan-500/10 transition-all backdrop-blur-sm flex items-center gap-2">
+                    <Mail size={16} /> Contact Uplink
+                  </a>
+                </div>
+              </motion.div>
+            </section>
+
+            {/* Mission Section */}
+            <section id="mission" className="py-32 px-6 md:px-24 bg-slate-950/20 backdrop-blur-md border-y border-cyan-500/10 relative overflow-hidden">
+              <div className="absolute top-0 right-0 p-8 opacity-10">
+                <Snowflake size={200} strokeWidth={0.5} className="animate-spin-slow" />
+              </div>
+              <div className="max-w-4xl relative z-10">
+                <div className="flex items-center gap-4 mb-8">
+                  <Shield className="text-cyan-400" size={32} />
+                  <h2 className="text-4xl md:text-5xl font-bold">The Growth Manifesto</h2>
+                </div>
+                <div className="grid md:grid-cols-2 gap-12">
+                  <div className="space-y-6">
+                    <p className="font-mono text-cyan-300 text-sm italic">
+                      "Media buying is a science. Ad creative is the soul. Conversion is the only metric."
+                    </p>
+                    <p className="text-slate-400 leading-relaxed font-mono text-sm">
+                      As an <strong>AI Vibe Coder and Funnel Strategist</strong>, I've spent the last 2 years perfecting the art of the scroll-stop. 
+                      I don't just buy traffic; I architect multi-stage growth funnels powered by generative AI and automated systems that scale with sub-zero efficiency.
+                    </p>
+                  </div>
+                  <div className="grid grid-cols-2 gap-4">
+                    <div className="p-4 border border-cyan-500/20 bg-cyan-950/10 group hover:border-cyan-400 transition-colors">
+                      <div className="text-cyan-400 mb-2 group-hover:scale-110 transition-transform"><TrendingUp size={20} /></div>
+                      <div className="text-[10px] uppercase font-bold text-slate-100">Media Master</div>
+                      <div className="text-[8px] text-slate-500 uppercase mt-1">2+ Years Growth Exp</div>
+                    </div>
+                    <div className="p-4 border border-cyan-500/20 bg-cyan-950/10 group hover:border-cyan-400 transition-colors">
+                      <div className="text-cyan-400 mb-2 group-hover:scale-110 transition-transform"><Sparkles size={20} /></div>
+                      <div className="text-[10px] uppercase font-bold text-slate-100">Ad Creative</div>
+                      <div className="text-[8px] text-slate-500 uppercase mt-1">High-Conversion Synth</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+            {/* Arsenal Section */}
+            <section id="arsenal" className="py-32 px-6 md:px-24">
+              <div className="flex items-center gap-4 mb-16">
+                <Terminal className="text-cyan-400" size={32} />
+                <h2 className="text-4xl md:text-5xl font-bold">The Arsenal</h2>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-1 px-1 bg-cyan-500/10 border border-cyan-500/10">
+                {SKILLS.map((skill, i) => (
+                  <div key={i} className="bg-[#0a0f14] p-8 flex flex-col group relative overflow-hidden">
+                    <div className="absolute top-0 right-0 p-2 opacity-0 group-hover:opacity-10 transition-opacity">
+                      <Snowflake size={40} />
+                    </div>
+                    <div className="flex justify-between items-center mb-6">
+                      <span className="text-[10px] uppercase font-mono text-cyan-500/50">Spec // {skill.category}</span>
+                      <span className="text-cyan-300 text-xs font-mono">{skill.level}%</span>
+                    </div>
+                    <h3 className="text-2xl font-bold mb-4 group-hover:text-cyan-400 transition-colors">{skill.name}</h3>
+                    <div className="w-full h-[1px] bg-slate-800 relative overflow-hidden">
+                      <motion.div 
+                        initial={{ width: 0 }}
+                        whileInView={{ width: `${skill.level}%` }}
+                        transition={{ duration: 1.5, ease: "easeOut" }}
+                        className="absolute inset-y-0 left-0 bg-gradient-to-r from-cyan-600 to-white" 
+                      />
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </section>
+
+            {/* Projects Section */}
+            <section id="projects" className="py-32 px-6 md:px-24">
+              <div className="flex justify-between items-end mb-16">
+                <div>
+                  <h2 className="text-4xl md:text-5xl font-bold mb-4">Classified Campaigns</h2>
+                  <p className="text-cyan-400/60 font-mono text-xs uppercase tracking-[0.3em]">Active Operations // ROI_OPTIMIZED</p>
+                </div>
+              </div>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {PROJECTS.map((project) => (
+                  <ProjectCard key={project.id} project={project} />
+                ))}
+              </div>
+            </section>
+
+            {/* Footer / Contact */}
+            <footer id="contact" className="py-24 px-6 md:px-24 bg-cyan-500 text-black">
+              <div className="grid md:grid-cols-2 gap-12 items-center">
+                <div>
+                  <h2 className="text-5xl md:text-7xl font-bold mb-8 uppercase leading-none tracking-tighter">Initiate <br /> Connection.</h2>
+                  <div className="flex gap-8">
+                    <div className="flex flex-col">
+                      <span className="text-[10px] uppercase font-bold tracking-widest opacity-60 mb-2">Primary_Mail</span>
+                      <a href={`mailto:${EMAIL_ADDRESS}`} className="text-lg font-bold border-b-2 border-black pb-1 hover:opacity-70 transition-opacity">
+                        {EMAIL_ADDRESS}
+                      </a>
+                    </div>
+                  </div>
+                </div>
+                <div className="flex flex-col gap-6 md:items-end">
+                   <p className="text-xs uppercase font-bold tracking-widest text-right max-w-xs md:opacity-80 font-mono">
+                    Monitoring for high-tier growth experiments. Digital Marketer. Media Buyer. Strategy Architect. Station: MALIK_ECOM.
+                   </p>
+                   <div className="flex gap-6">
+                    <a href={`mailto:${EMAIL_ADDRESS}`} className="p-4 bg-black text-cyan-400 rounded-full hover:scale-110 transition-transform">
+                      <Mail size={24} />
+                    </a>
+                    <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="p-4 bg-black text-cyan-400 rounded-full hover:scale-110 transition-transform">
+                      <Linkedin size={24} />
+                    </a>
+                    <a href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer" className="p-4 bg-black text-cyan-400 rounded-full hover:scale-110 transition-transform">
+                      <MessageCircle size={24} />
+                    </a>
+                   </div>
+                </div>
+              </div>
+              <div className="mt-24 pt-8 border-t border-black/20 text-[10px] font-mono flex justify-between items-center opacity-60">
+                <span>© 2024 KOMILOV ABDUMALIK. THE WINTER GROWTH ARCHITECT.</span>
+                <span className="flex items-center gap-1 uppercase tracking-tighter"><Snowflake size={10} /> TG: @malik_ecom</span>
+              </div>
+            </footer>
+          </main>
+        </motion.div>
+      )}
+      <style>{`
+        @keyframes spin-slow {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+        }
+        .animate-spin-slow {
+          animation: spin-slow 12s linear infinite;
+        }
+      `}</style>
+    </div>
+  );
+};
+
+export default App;
