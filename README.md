@@ -18,4 +18,4 @@ This project is configured for **Netlify**.
 4. **Deploy**: Your cinematic portfolio will be live at a custom `.netlify.app` URL.
 
 ---
-© 2024 KOMILOV ABDUMALIK. UNLOCKING SUB-ZERO GROWTH.
+© 2024 KOMILOV ABDUMALIK. ARCHITECTING DIGITAL DOMINANCE.

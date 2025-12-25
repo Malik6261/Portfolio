@@ -4,11 +4,14 @@ import Background3D from './components/Background3D';
 import BiosBoot from './components/BiosBoot';
 import ProjectCard from './components/ProjectCard';
 import SnowOverlay from './components/SnowOverlay';
+import UplinkTerminal from './components/UplinkTerminal';
 import { PROJECTS, SKILLS } from './constants';
-import { Shield, Terminal, Snowflake, MessageCircle, Linkedin, Mail, Sparkles, TrendingUp, ChevronDown } from 'lucide-react';
+import { Shield, Terminal, Snowflake, MessageCircle, Linkedin, Mail, Sparkles, TrendingUp, ChevronDown, X } from 'lucide-react';
 
 const App: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState(false);
+  const [isTerminalOpen, setIsTerminalOpen] = useState(false);
+  
   const LINKEDIN_URL = "https://www.linkedin.com/in/abdumalik-komilov-86107a320/";
   const EMAIL_ADDRESS = "abdumalikkomilov2003@gmail.com";
   const TELEGRAM_URL = "https://t.me/malik_labs";
@@ -17,6 +20,17 @@ const App: React.FC = () => {
     <div className="relative min-h-screen selection:bg-cyan-500 selection:text-black bg-[#060a0f] overflow-x-hidden">
       <AnimatePresence mode="wait">
         {!isLoaded && <BiosBoot onComplete={() => setIsLoaded(true)} />}
+      </AnimatePresence>
+
+      <AnimatePresence>
+        {isTerminalOpen && (
+          <UplinkTerminal 
+            onClose={() => setIsTerminalOpen(false)}
+            email={EMAIL_ADDRESS}
+            telegram={TELEGRAM_URL}
+            linkedin={LINKEDIN_URL}
+          />
+        )}
       </AnimatePresence>
 
       {/* Only load 3D and effects AFTER boot for better performance */}
@@ -39,7 +53,7 @@ const App: React.FC = () => {
               <span className="font-mono text-cyan-400 text-xs font-bold tracking-[0.3em] flex items-center gap-2">
                 <Snowflake size={14} className="animate-spin-slow text-white" /> ARCTIC_CORE_ACTIVE
               </span>
-              <span className="font-mono text-[8px] text-cyan-400/50 uppercase">Subzero_Protocol_v2.0</span>
+              <span className="font-mono text-[8px] text-cyan-400/50 uppercase">Arctic_Engine_v1.0</span>
             </div>
             
             <div className="flex gap-4 items-center">
@@ -74,9 +88,12 @@ const App: React.FC = () => {
                   "Engineering high-conversion ad ecosystems in the digital tundra. I don't just scale budgets; I architect dominance through AI-synthesized creative logic."
                 </p>
                 <div className="flex flex-wrap gap-4">
-                  <a href={`mailto:${EMAIL_ADDRESS}`} className="px-8 py-4 bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 font-bold uppercase text-[10px] tracking-widest hover:bg-cyan-500 hover:text-black transition-all backdrop-blur-md flex items-center gap-2 group">
+                  <button 
+                    onClick={() => setIsTerminalOpen(true)}
+                    className="px-8 py-4 bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 font-bold uppercase text-[10px] tracking-widest hover:bg-cyan-500 hover:text-black transition-all backdrop-blur-md flex items-center gap-2 group"
+                  >
                     <Mail size={16} className="group-hover:rotate-12 transition-transform" /> CONTACT_UPLINK
-                  </a>
+                  </button>
                 </div>
               </motion.div>
               
@@ -91,7 +108,7 @@ const App: React.FC = () => {
               <div className="max-w-4xl">
                 <div className="flex items-center gap-4 mb-8">
                   <Shield className="text-cyan-400" size={32} />
-                  <h2 className="text-3xl md:text-5xl font-bold">The Sub-Zero Manifesto</h2>
+                  <h2 className="text-3xl md:text-5xl font-bold">Principles of Execution</h2>
                 </div>
                 <div className="grid md:grid-cols-2 gap-12">
                   <div className="space-y-6">
@@ -99,7 +116,7 @@ const App: React.FC = () => {
                       "In the digital noise, only the coldest, most precise logic survives. Growth is not an accident; it is an architecture."
                     </p>
                     <p className="text-slate-400 leading-relaxed font-mono text-sm">
-                      Over 2 years of orchestrating high-stakes growth experiments. I specialize in the intersection of <strong>Media Buying</strong> and <strong>Gen-AI Production</strong>. 
+                      Years of experience orchestrating high-stakes growth experiments. I specialize in the intersection of <strong>Media Buying</strong> and <strong>Gen-AI Production</strong>. 
                     </p>
                   </div>
                   <div className="grid grid-cols-2 gap-4">
@@ -173,8 +190,8 @@ const App: React.FC = () => {
                     <a href={LINKEDIN_URL} target="_blank" rel="noopener noreferrer" className="p-4 bg-black text-cyan-400 rounded-full hover:scale-110 transition-all">
                       <Linkedin size={20} />
                     </a>
-                    <a href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer" className="p-4 bg-black text-cyan-400 rounded-full hover:scale-110 transition-all">
-                      <MessageCircle size={20} />
+                    <a href={TELEGRAM_URL} target="_blank" rel="noopener noreferrer" className="p-2 bg-white/5 border border-white/10 hover:border-cyan-400/50 transition-all rounded-sm group backdrop-blur-md">
+                      <MessageCircle size={16} className="text-slate-400 group-hover:text-cyan-400 transition-colors" />
                     </a>
                    </div>
                    <p className="text-[10px] font-mono opacity-80 text-right uppercase">© 2024 KOMILOV ABDUMALIK. THE WINTER ARCHITECT.</p>
