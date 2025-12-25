@@ -11,7 +11,7 @@ const App: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState(false);
   const LINKEDIN_URL = "https://www.linkedin.com/in/abdumalik-komilov-86107a320/";
   const EMAIL_ADDRESS = "abdumalikkomilov2003@gmail.com";
-  const TELEGRAM_URL = "https://t.me/malik_ecom";
+  const TELEGRAM_URL = "https://t.me/malik_labs";
 
   return (
     <div className="relative min-h-screen selection:bg-cyan-500 selection:text-black bg-[#060a0f] overflow-x-hidden">
