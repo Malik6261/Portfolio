@@ -6,7 +6,7 @@ import ProjectCard from './components/ProjectCard';
 import SnowOverlay from './components/SnowOverlay';
 import UplinkTerminal from './components/UplinkTerminal';
 import { PROJECTS, SKILLS } from './constants';
-import { Shield, Terminal, Snowflake, MessageCircle, Linkedin, Mail, Target, Activity, Zap, Layers, ChevronRight, Globe, CheckCircle2 } from 'lucide-react';
+import { Shield, Terminal, Snowflake, MessageCircle, Linkedin, Mail, Target, Activity, Zap, Layers, ChevronRight, Globe, CheckCircle2, Cpu, BarChart3, Fingerprint } from 'lucide-react';
 
 const App: React.FC = () => {
   const [isLoaded, setIsLoaded] = useState(false);
@@ -15,7 +15,6 @@ const App: React.FC = () => {
   const LINKEDIN_URL = "https://www.linkedin.com/in/abdumalik-komilov-86107a320/";
   const EMAIL_ADDRESS = "maliklabs.work@gmail.com";
   const TELEGRAM_URL = "https://t.me/malik_labs";
-  const PROFILE_IMAGE = "https://i.postimg.cc/85xt5GpB/85d19fbe-ed1e-4521-9dd6-815baa0284d9.png"; 
 
   return (
     <div className="relative min-h-screen selection:bg-cyan-500 selection:text-black bg-[#060a0f] overflow-x-hidden">
@@ -73,7 +72,7 @@ const App: React.FC = () => {
             </header>
 
             <main>
-              {/* Hero Section - Convergent Redesign */}
+              {/* Hero Section */}
               <section className="min-h-screen flex flex-col lg:flex-row items-center justify-center px-6 md:px-24 pt-32 lg:pt-0 relative gap-16 overflow-hidden">
                 <motion.div
                   initial={{ x: -30, opacity: 0 }}
@@ -117,7 +116,7 @@ const App: React.FC = () => {
                   </div>
                 </motion.div>
 
-                {/* Right: Biometric Portrait - Integrated */}
+                {/* Right: Digital System Status (Replacing Portrait) */}
                 <motion.div
                   initial={{ opacity: 0, scale: 0.98 }}
                   animate={{ opacity: 1, scale: 1 }}
@@ -125,16 +124,48 @@ const App: React.FC = () => {
                   className="flex-1 relative flex justify-center lg:justify-end"
                 >
                   <div className="relative group">
-                    {/* Compact Biometric Overlay */}
                     <div className="absolute -top-6 -left-6 z-20 pointer-events-none">
                       <div className="bg-black/80 border border-white/10 p-2 backdrop-blur-xl font-mono text-[8px] text-cyan-400/60 space-y-1">
-                        <div className="flex items-center gap-2"><Target size={8} /> ID: ABDUMALIK_K</div>
-                        <div className="flex items-center gap-2"><Activity size={8} className="animate-pulse" /> BIO: ACTIVE</div>
+                        <div className="flex items-center gap-2"><Target size={8} /> ID: ARCHITECT_MOD</div>
+                        <div className="flex items-center gap-2"><Activity size={8} className="animate-pulse" /> CORE: ONLINE</div>
                       </div>
                     </div>
 
-                    <div className="relative w-52 h-64 md:w-64 md:h-80 grayscale contrast-[1.1] border border-white/10 bg-slate-900 shadow-2xl overflow-hidden group-hover:grayscale-0 transition-all duration-700">
-                      <img src={PROFILE_IMAGE} alt="Abdumalik Komilov" className="w-full h-full object-cover object-top opacity-80 group-hover:opacity-100 transition-all duration-700" />
+                    {/* Abstract Digital Core Visualization */}
+                    <div className="relative w-52 h-64 md:w-64 md:h-80 border border-white/10 bg-slate-900 shadow-2xl overflow-hidden flex flex-col items-center justify-center p-8">
+                      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,243,255,0.05)_0%,transparent_70%)]" />
+                      
+                      {/* Central Animated Element */}
+                      <div className="relative z-10 flex flex-col items-center gap-6">
+                        <motion.div
+                          animate={{ rotate: 360 }}
+                          transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
+                          className="p-6 border border-cyan-500/20 rounded-full relative"
+                        >
+                          <Cpu size={48} className="text-cyan-500 opacity-40" />
+                          <div className="absolute inset-0 border-2 border-dashed border-cyan-500/10 rounded-full animate-spin-slow" />
+                        </motion.div>
+                        
+                        <div className="space-y-2 text-center">
+                          <div className="font-mono text-[10px] text-cyan-400 tracking-[0.3em] font-bold uppercase">System_Active</div>
+                          <div className="flex gap-1 justify-center">
+                            {[...Array(5)].map((_, i) => (
+                              <motion.div
+                                key={i}
+                                animate={{ height: [8, 16, 8], opacity: [0.3, 1, 0.3] }}
+                                transition={{ duration: 0.8, repeat: Infinity, delay: i * 0.1 }}
+                                className="w-1 bg-cyan-400"
+                              />
+                            ))}
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Data Stream Grid Background */}
+                      <div className="absolute bottom-0 left-0 w-full h-1/2 opacity-10 font-mono text-[6px] text-cyan-400 overflow-hidden leading-tight p-2 whitespace-pre select-none pointer-events-none">
+                        {`PROCESS_INIT\nAUTH_KEY_VERIFIED\nAES_256_ACTIVE\nLINK_ESTABLISHED\nDATA_STREAM_01_OK\nCONVERSION_PIPELINE_STABLE\nLOG_042_SUCCESS\nSIGNAL_OPTIMIZED`}
+                      </div>
+
                       <div className="absolute inset-0 bg-gradient-to-t from-[#060a0f] via-transparent to-transparent opacity-60" />
                       <div className="absolute top-0 left-0 w-full h-[1px] bg-cyan-400/20 animate-scan-portrait pointer-events-none" />
                     </div>
@@ -146,7 +177,7 @@ const App: React.FC = () => {
                 </motion.div>
               </section>
 
-              {/* Operating Principles Section - Methodology over Philosophy */}
+              {/* Operating Principles Section */}
               <section id="principles" className="py-32 px-6 md:px-24 bg-slate-900/20 border-y border-white/5">
                 <div className="max-w-5xl mx-auto">
                   <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
@@ -178,7 +209,7 @@ const App: React.FC = () => {
                 </div>
               </section>
 
-              {/* Arsenal Section - Capability over percentages */}
+              {/* Arsenal Section */}
               <section id="arsenal" className="py-32 px-6 md:px-24">
                 <div className="max-w-5xl mx-auto">
                   <div className="flex items-center gap-4 mb-16">
@@ -220,7 +251,7 @@ const App: React.FC = () => {
                 </div>
               </section>
 
-              {/* Enhanced Conversion Footer */}
+              {/* Footer */}
               <footer id="contact" className="py-32 px-6 md:px-24 bg-cyan-500 text-black">
                 <div className="max-w-6xl mx-auto grid lg:grid-cols-2 gap-20 items-center">
                   <div>
