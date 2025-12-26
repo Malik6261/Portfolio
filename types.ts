@@ -4,12 +4,15 @@ export interface Project {
   title: string;
   category: string;
   description: string;
+  problem?: string;
+  solution?: string;
+  outcome?: string;
   specs: string[];
   url?: string;
 }
 
 export interface Skill {
   name: string;
-  level: number;
+  label: string;
   category: string;
 }

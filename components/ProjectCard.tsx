@@ -2,81 +2,87 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Project } from '../types';
-import { FileText, ChevronRight, ExternalLink, Snowflake } from 'lucide-react';
+import { Activity, ChevronRight, ExternalLink, Snowflake, Target, Zap } from 'lucide-react';
 
 interface ProjectCardProps {
   project: Project;
 }
 
 const ProjectCard: React.FC<ProjectCardProps> = ({ project }) => {
-  const CardContent = (
-    <div className="relative h-full z-10">
-      <div className="absolute top-0 right-0 p-3 text-[8px] font-mono text-cyan-500/40 select-none flex items-center gap-1">
+  return (
+    <motion.div
+      whileHover={{ y: -5 }}
+      className="relative group bg-slate-900/40 border border-white/5 p-6 backdrop-blur-xl transition-all duration-500 overflow-hidden flex flex-col h-full"
+    >
+      <div className="absolute top-0 right-0 p-3 text-[8px] font-mono text-cyan-500/30 flex items-center gap-1 uppercase">
         <Snowflake size={8} className="animate-spin-slow" />
-        SECURE_ID: {project.id}
-      </div>
-      
-      <div className="flex items-start gap-4 mb-4">
-        <div className="p-3 bg-cyan-500/10 border border-cyan-500/20 text-cyan-400 backdrop-blur-sm group-hover:bg-cyan-500 group-hover:text-black transition-all">
-          <FileText size={20} />
-        </div>
-        <div>
-          <h3 className="text-xl font-bold text-white mb-1 group-hover:text-cyan-400 transition-colors">
-            {project.title}
-          </h3>
-          <span className="text-[10px] uppercase tracking-[0.2em] text-cyan-500/80 font-mono">
-            LOG_ENTRY // {project.category}
-          </span>
-        </div>
+        OP_ID: {project.id}
       </div>
 
-      <p className="text-sm text-slate-400 leading-relaxed mb-6 font-mono border-l border-white/5 pl-4 group-hover:border-cyan-500/40 transition-colors">
-        {project.description}
-      </p>
+      <div className="mb-6">
+        <span className="text-[10px] uppercase tracking-[0.2em] text-cyan-400 font-mono block mb-1">
+          {project.category}
+        </span>
+        <h3 className="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors tracking-tight">
+          {project.title}
+        </h3>
+      </div>
 
-      <div className="flex flex-wrap gap-2">
+      <div className="space-y-4 mb-8 flex-grow">
+        {project.problem && (
+          <div className="border-l border-red-500/20 pl-4">
+            <div className="text-[8px] font-mono text-red-400/60 uppercase mb-1 flex items-center gap-1">
+              <Target size={8} /> The_Problem
+            </div>
+            <p className="text-xs text-slate-400 font-mono leading-relaxed">{project.problem}</p>
+          </div>
+        )}
+        
+        {project.solution && (
+          <div className="border-l border-cyan-500/20 pl-4">
+            <div className="text-[8px] font-mono text-cyan-400/60 uppercase mb-1 flex items-center gap-1">
+              <Zap size={8} /> The_System
+            </div>
+            <p className="text-xs text-slate-400 font-mono leading-relaxed">{project.solution}</p>
+          </div>
+        )}
+
+        {project.outcome && (
+          <div className="border-l border-emerald-500/20 pl-4">
+            <div className="text-[8px] font-mono text-emerald-400/60 uppercase mb-1 flex items-center gap-1">
+              <Activity size={8} /> The_Result
+            </div>
+            <p className="text-xs text-slate-300 font-mono leading-relaxed italic">{project.outcome}</p>
+          </div>
+        )}
+      </div>
+
+      <div className="flex flex-wrap gap-2 mb-6">
         {project.specs.map((spec, i) => (
           <span 
             key={i} 
-            className="text-[9px] px-2 py-0.5 bg-white/5 border border-white/10 text-slate-400 uppercase font-mono group-hover:text-cyan-300 group-hover:border-cyan-500/20 transition-all"
+            className="text-[8px] px-2 py-0.5 bg-cyan-500/5 border border-cyan-500/10 text-cyan-400/70 uppercase font-mono"
           >
             {spec}
           </span>
         ))}
       </div>
 
-      <div className="mt-6 flex items-center gap-2 text-cyan-400 group-hover:translate-x-2 transition-transform">
-        <span className="text-[10px] uppercase font-bold tracking-widest">
-          {project.url ? 'ENTER_SIMULATION' : 'DATA_RESTRICTED'}
-        </span>
-        {project.url ? <ExternalLink size={14} /> : <ChevronRight size={14} />}
+      <div className="mt-auto pt-4 border-t border-white/5">
+        {project.url ? (
+          <a href={project.url} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-cyan-400 group-hover:gap-3 transition-all">
+            <span className="text-[10px] uppercase font-bold tracking-widest">Enter_Simulation</span>
+            <ExternalLink size={12} />
+          </a>
+        ) : (
+          <div className="flex items-center gap-2 text-slate-500 italic">
+            <span className="text-[10px] uppercase font-bold tracking-widest">Internal_Deployment</span>
+            <ChevronRight size={12} />
+          </div>
+        )}
       </div>
 
-      {/* Grid Pattern Background */}
-      <div className="absolute inset-0 opacity-[0.05] pointer-events-none bg-[radial-gradient(#00f3ff_1px,transparent_1px)] [background-size:16px_16px]" />
-    </div>
-  );
-
-  return (
-    <motion.div
-      whileHover={{ 
-        y: -5,
-        boxShadow: "0 0 30px rgba(0, 243, 255, 0.15)"
-      }}
-      className="relative group bg-black/60 border border-white/5 p-8 backdrop-blur-xl transition-all duration-500 overflow-hidden cursor-pointer"
-    >
-      {/* Crystalline Shimmer */}
-      <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-tr from-transparent via-cyan-400/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
-      </div>
-
-      {project.url ? (
-        <a href={project.url} target="_blank" rel="noopener noreferrer">
-          {CardContent}
-        </a>
-      ) : (
-        CardContent
-      )}
+      <div className="absolute inset-0 opacity-[0.02] pointer-events-none bg-[radial-gradient(#00f3ff_1px,transparent_1px)] [background-size:16px_16px]" />
     </motion.div>
   );
 };
